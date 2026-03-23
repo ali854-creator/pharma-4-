@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# نظام صيدلية (Pharmacy Management System)
 
-# Run and deploy your AI Studio app
+تطبيق Flask بسيط لإدارة الصيدلية:
+- إدارة الأدوية ( Inventory )
+- نظام مبيعات (POS)
+- إدارة الوصفات الطبية
+- جرد المخزون
+- تقارير ومحاسبة
+- إدارة المستخدمين وصلاحيات
 
-This contains everything you need to run your app locally.
+## متطلبات
 
-View your app in AI Studio: https://ai.studio/apps/87cbf0ef-be91-4b7c-9a89-4f217a4bb295
+- Python 3.11+ (أو 3.10)
+- مكتبات:
+  - Flask
+  - Flask-Login
+  - Flask-SQLAlchemy
+  - Werkzeug
 
-## Run Locally
+## التشغيل
 
-**Prerequisites:**  Node.js
+```bash
+cd "c:\Users\Ali\Desktop\pharma 3"
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
+```
 
+أو ببساطة بالضغط مزدوجًا على `run.bat`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+افتح المتصفح:
+- `http://127.0.0.1:5000` (محلي)
+- أو `http://<عنوان_IP>:5000` للوصول من أجهزة أخرى
+
+حساب إفتراضي:
+- اسم المستخدم: `admin`
+- كلمة المرور: `admin123`
+
+## أهم المسارات
+
+- `/` لوحة التحكم
+- `/drugs` إدارة الأدوية
+- `/drugs/add` إضافة دواء
+- `/sales` نظام البيع
+- `/prescriptions` الوصفات
+- `/stock_audit` الجرد
+- `/reports` التقارير
+- `/suppliers` الموردين
+- `/users` إدارة المستخدمين (admin فقط)
+
+## ملاحظات
+
+- إن واجهت خطأ متعلقة بـ"barcode" أو حقل مكرر، تأكد أن `barcode` لا يتكرر في نفس الدواء.
+- التطبيق يستخدم قاعدة SQLite محلية `pharmacy.db` في نفس المجلد.
+- نسخ احتياطي: اضغط `نسخ احتياطي` من القائمة لتحميل DB.
